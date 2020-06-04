@@ -1,5 +1,6 @@
 <html>
   <head>
+    <meta http-equiv="refresh" content="3;url=http://www.google.com/" />
   	 <script type="text/javascript">
     function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
@@ -19,9 +20,9 @@
 }
 
 window.onload = function () {
-    var fiveMinutes = 60 * 8+20,
+    var Minutes = 60 * 8+20,
         display = document.querySelector('#time');
-    startTimer(fiveMinutes, display);
+    startTimer(Minutes, display);
 };
     </script>
     <title></title>
@@ -30,6 +31,6 @@ window.onload = function () {
   </head>
  
   <body>
-  	<div>Registration closes in <span id="time">08:20</span> minutes!</div>
+  	<div><span id="time">08:20</span> minutes!</div>
   	<h1>hmm...   </h1></body>
 </html>
