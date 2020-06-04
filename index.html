@@ -1,36 +1,36 @@
 <html>
   <head>
+  	 <script type="text/javascript">
+  	function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var fiveMinutes = 60 * 5,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
+
+</script>
     <title></title>
     <meta content="">
-    <style>
-      h1{
-      
-      font-size:500%; 
-      }
-    
-    
-    
-    </style>
+    <style></style>
   </head>
-  <script type="text/javascript">
-  	function updateClock() {
-    var now = new Date(), // current date
-        months = ['January', 'February', '...']; // you get the idea
-        time = now.getHours() + ':' + now.getMinutes(), // again, you get the idea
-
-        // a cleaner way than string concatenation
-        date = [now.getDate(), 
-                months[now.getMonth()],
-                now.getFullYear()].join(' ');
-
-    // set the content of the element with the ID time to the formatted string
-    document.getElementById('time').innerHTML = [date, time].join(' / ');
-
-    // call this function again in 1000ms
-    setTimeout(updateClock, 1000);}
-    updateClock();
-</script>
+ 
   <body>
-  	<div id="time"> </div>
+  	<div>Registration closes in <span id="time">08:20</span> minutes!</div>
   	<h1>hmm...   </h1></body>
 </html>
