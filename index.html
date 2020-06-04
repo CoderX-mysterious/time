@@ -1,6 +1,6 @@
 <html>
   <head>
-    <meta http-equiv="refresh" content="8;url=http://www.google.com/" />
+    <meta http-equiv="refresh" content="100;url=http://www.google.com/" />
   	 <script type="text/javascript">
     function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
@@ -18,24 +18,21 @@
         }
     }, 1000);
 }
-var text = ["Welcome", "Hi", "Sup"," dude","hmm... "];
-var counter = 0;
-var elem = document.getElementById("changeText");
-var inst = setInterval(change, 1000);
 
-function change() {
-  elem.innerHTML = text[counter];
-  counter++;
-  if (counter >= text.length) {
-    counter = 0;
-    // clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
-  }
-}
 window.onload = function () {
-    var Minutes = 60 * 8+20,
+    var Minutes = 60 * 10,
         display = document.querySelector('#time');
     startTimer(Minutes, display);
 };
+var i=0;
+var greet="Hello Friend!,Hi Dude!,Sup Dude!,Yo Friend,Yo Dude!,Hello!,Bonjour!,Hola!,Namaste!!!,Good Morning Dude,Good Evening Dude!,Nice to meet you , Good to see you , Nice to see you,Howdy!, G’day mate!,Good Day";
+var yo=greet[0];
+window.setInterval(function() 
+{
+    document.getElementById("myspan").textContent=yo;
+    i++;
+    yo=yo+greet[i]
+}, 500);
     </script>
     <title></title>
     <meta content="">
@@ -44,5 +41,5 @@ window.onload = function () {
  
   <body>
   	<div><span id="time">08:20</span> minutes!</div>
-  	<h1 id="changeText">hmm...   </h1></body>
+  	<h1 id="myspan">ok   </h1></body>
 </html>
